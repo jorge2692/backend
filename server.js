@@ -63,8 +63,9 @@ esp8266 (app);
 // server.listen(3000,'192.168.39.130' || 'localhost', function(){
 //     console.log('Aplicacion de  NodeJS ' + port + ' Iniciado...')
 // });
-server.listen(3000,process.env.PORT || '5000', function(){
+server.listen(5000,process.env.PORT || '192.168.39.191', function(){
     const port = server.address().port;
+    console.log(process.env.PORT)
     console.log(port)
     console.log('Aplicacion de  NodeJS ' + port + ' Iniciado...')
 });
