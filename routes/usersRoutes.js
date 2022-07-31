@@ -12,6 +12,7 @@ module.exports = (app, upload) => {
     app.post('/api/users/create', upload.array('image', 1), UsersController.registerWithImage);
 
     app.post('/api/users/login',UsersController.login);
+    app.post('/api/users/fcm',UsersController.fcmUpdate);
     app.post('/api/users/logout',UsersController.logout);
 
 

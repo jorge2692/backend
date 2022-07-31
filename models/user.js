@@ -176,6 +176,24 @@ User.updateToken = (id, token) => {
     ]);
 }
 
+User.updateFcm = (id, token) => {
+
+    const sql = `
+    UPDATE
+        users
+    SET
+        fcm_token = $2
+    WHERE
+        id = $1
+    `;
+
+    return db.none(sql, [
+        id,
+        token
+    ]);
+}
+
+
 
 
 User.isPasswordMatched = (userPassword, hash) => {

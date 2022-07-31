@@ -7,6 +7,28 @@ const storage  = require('../utils/cloud_storage');
 
 
 module.exports = {
+
+
+    /// update user fcm token
+    async fcmUpdate(req,res,next){
+        try{
+            const id = req.body.id;
+            const fcm = req.body.fcm;
+            await User.updateFcm(id,fcm);
+            return res.status(201).json({
+                success:true,
+                message:'La sesion cerro Correctamente!'
+            });
+        }catch(e){
+            console.log(`Error: ${error}`);
+            return res.status.json({
+                success: false,
+                message: 'Error amigo'
+            });
+        }
+    },
+
+
     async getAll(req, res, next){
         try{
             const data = await User.getAll();
