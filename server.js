@@ -10,6 +10,7 @@ const admin = require('firebase-admin');
 const serviceAccount = require('./serviceAccountKey.json');
 const passport = require('passport');
 
+
 admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
 })
@@ -65,13 +66,11 @@ esp8266 (app);
 // });
 
 
-
-//server.listen(process.env.PORT || '192.168.39.191', function(){
- //   const port = server.address().port;
-  // console.log(process.env.PORT)
-  //  console.log(port)
-  //  console.log('Aplicacion de  NodeJS ' + port + ' Iniciado...')
-//});
+server.listen(process.env.PORT || '192.168.39.191', function(){
+    const port = server.address().port;
+    console.log(port)
+    console.log('Aplicacion de  NodeJS ' + port + ' Iniciado...')
+});
 
 
 // ERROR HANDLER
