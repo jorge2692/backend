@@ -70,16 +70,30 @@ Esp8266.getUsersFcm = (data) =>{
     return db.manyOrNone(sql);
 }
 
-Esp8266.getMachineByID = (id) =>{
+Esp8266.getMachineIdByEspId = (id) =>{
 
     const sql = `
         SELECT
-            name
+            id_machine
+        FROM
+            esp8266
+        WHERE
+            id = $1
+    `;
+
+    return db.manyOrNone(sql);
+}
+
+
+Esp8266.getMachineIdByEspId = (id) =>{
+
+    const sql = `
+        SELECT
+            *
         FROM
             machines
         WHERE
-            id = $id
-    
+            id = $1
     `;
 
     return db.manyOrNone(sql);
