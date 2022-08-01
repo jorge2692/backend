@@ -157,6 +157,8 @@ module.exports = {
             console.log('Entro a notificate');
             
             const fcmTokens = await Esp8266.getUsersFcm(id);
+            console.log(fcmTokens);
+
             var payload = {
                 notification: {
                   title: "Hubo un error en la maquina " + id ,
