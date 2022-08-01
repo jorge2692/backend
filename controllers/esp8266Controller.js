@@ -157,11 +157,13 @@ module.exports = {
             console.log('Entro a notificate');
             var tokens = [];
             var fcmTokens = await Esp8266.getUsersFcm(id);
-            console.log(fcmTokens);
-            for (var value in fcmTokens) {
+            var objectValue = JSON.parse(string);
+            console.log(objectValue);
+
+            for (var value in objectValue) {
                 console.log(value)
-                console.log(property['fcm_token'])
-                tokens.push(property['fcm_token']);
+                console.log(value['fcm_token'])
+                tokens.push(value['fcm_token']);
             }
               
             console.log(tokens);
