@@ -71,10 +71,9 @@ Esp8266.getUsersFcm = () =>{
 }
 
 Esp8266.getMachineIdByEspId = (id) =>{
-    console.log(id);
     const sql = `
         SELECT
-            *
+            id_machine
         FROM
             esp8266
         WHERE
@@ -85,7 +84,7 @@ Esp8266.getMachineIdByEspId = (id) =>{
 }
 
 
-Esp8266.getMachineIdByEspId = (id) =>{
+Esp8266.getMachineByEspId = (id) =>{
 
     const sql = `
         SELECT
