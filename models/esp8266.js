@@ -74,7 +74,7 @@ Esp8266.getMachineIdByEspId = (id) =>{
     console.log(id);
     const sql = `
         SELECT
-            id_machine
+            *
         FROM
             esp8266
         WHERE

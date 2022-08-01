@@ -154,10 +154,8 @@ module.exports = {
             console.log(`Lectura enviada: ${JSON.stringify(id)}`);
             const data = await Esp8266.error(id);
             const options =  notification_options
-            console.log('Entro a notificate');
             var idMachine = await Esp8266.getMachineIdByEspId(id.id);
-            console.log('Entro a notificate 2');
-
+            console.log(idMachine);
             var machine = await Esp8266.getMachineIdByEspId(idMachine.id_machine);
             console.log('Entro a notificate 3');
 
