@@ -160,7 +160,7 @@ module.exports = {
             console.log(fcmTokens)
 
             fcmTokens.forEach(element => {
-                    testData.push(element.name)
+                    testData.push(element.fcm_token)
                 });
             console.log(testData)
 
