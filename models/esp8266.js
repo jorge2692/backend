@@ -74,7 +74,7 @@ Esp8266.getMachineByID = (id) =>{
 
     const sql = `
         SELECT
-            *
+            name
         FROM
             machines
         WHERE
