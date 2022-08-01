@@ -164,7 +164,7 @@ module.exports = {
 
             var payload = {
                 notification: {
-                  title: "Hubo un error en la maquina " + id ,
+                  title: "Hubo un error en la maquina " + id.id_esp ,
                   body: "Revisa el estado de la maquina lo antes posible"
                 }
               };
