@@ -158,6 +158,7 @@ module.exports = {
             var tokens = [];
             const fcmTokens = await Esp8266.getUsersFcm(id);
             for (const property in fcmTokens) {
+                console.log(property['fcm_token'])
                 tokens.push(property['fcm_token']);
             }
               
