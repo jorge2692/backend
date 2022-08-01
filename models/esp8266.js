@@ -61,7 +61,7 @@ Esp8266.getUsersFcm = (data) =>{
 
     const sql = `
         SELECT
-            fcm_token,
+            fcm_token
         FROM
             users
     
