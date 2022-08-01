@@ -72,7 +72,6 @@ Esp8266.getUsersFcm = () =>{
 
 Esp8266.getMachineIdByEspId = (id) =>{
     console.log(id);
-    console.log(id);
     const sql = `
         SELECT
             id_machine

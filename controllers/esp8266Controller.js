@@ -156,7 +156,11 @@ module.exports = {
             const options =  notification_options
             console.log('Entro a notificate');
             var idMachine = await Esp8266.getMachineIdByEspId(id.id);
+            console.log('Entro a notificate 2');
+
             var machine = await Esp8266.getMachineIdByEspId(idMachine.id_machine);
+            console.log('Entro a notificate 3');
+
             var fcmTokens = await Esp8266.getUsersFcm(id);
             let testData = [];
             fcmTokens.forEach(element => {
