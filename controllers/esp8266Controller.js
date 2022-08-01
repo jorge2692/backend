@@ -170,7 +170,7 @@ module.exports = {
               };
         
               testData.forEach(element => {
-                admin.messaging().sendToDeviceGroup(element, payload, options)
+                admin.messaging().sendToDevice(element, payload, options)
             });
         
             
