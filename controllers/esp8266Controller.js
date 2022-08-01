@@ -155,6 +155,7 @@ module.exports = {
             const data = await Esp8266.error(id);
             const options =  notification_options
             console.log('Entro a notificate');
+            var machine = await Esp8266.getMachineByID(id);
             var fcmTokens = await Esp8266.getUsersFcm(id);
             let testData = [];
             fcmTokens.forEach(element => {
@@ -164,7 +165,7 @@ module.exports = {
 
             var payload = {
                 notification: {
-                  title: "Hubo un error en la maquina " + id.id_esp ,
+                  title: "Hubo un error en la maquina " + machine.name,
                   body: "Revisa el estado de la maquina lo antes posible"
                 }
               };

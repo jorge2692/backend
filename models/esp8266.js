@@ -70,6 +70,21 @@ Esp8266.getUsersFcm = (data) =>{
     return db.manyOrNone(sql);
 }
 
+Esp8266.getMachineByID = (id) =>{
+
+    const sql = `
+        SELECT
+            *
+        FROM
+            machines
+        WHERE
+            id= $1
+    
+    `;
+
+    return db.manyOrNone(sql);
+}
+
 Esp8266.error = (error) => {
     const sql = `
     
