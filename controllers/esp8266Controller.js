@@ -167,7 +167,11 @@ module.exports = {
                 notification: {
                   title: "Hubo un error en la maquina " + machine.name,
                   body: "Revisa el estado de la maquina lo antes posible"
-                }
+                },
+                data : {
+                    "id" : machine.id,
+                    "name" : machine.name
+                  }
               };
         
               testData.forEach(element => {
