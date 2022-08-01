@@ -57,7 +57,7 @@ Esp8266.dataReading = (dataReading) => {
     ])
 }
 
-Esp8266.getUsersFcm = (data) =>{
+Esp8266.getUsersFcm = () =>{
 
     const sql = `
         SELECT
@@ -71,7 +71,8 @@ Esp8266.getUsersFcm = (data) =>{
 }
 
 Esp8266.getMachineIdByEspId = (id) =>{
-
+    console.log(id);
+    console.log(id);
     const sql = `
         SELECT
             id_machine
@@ -81,7 +82,7 @@ Esp8266.getMachineIdByEspId = (id) =>{
             id = $1
     `;
 
-    return db.manyOrNone(sql);
+    return db.oneOrNone(sql,id);
 }
 
 
@@ -96,7 +97,7 @@ Esp8266.getMachineIdByEspId = (id) =>{
             id = $1
     `;
 
-    return db.manyOrNone(sql);
+    return db.manyOrNone(sql,id);
 }
 
 Esp8266.error = (error) => {
