@@ -97,7 +97,7 @@ Esp8266.getMachineIdByEspId = (id) =>{
             id = $1
     `;
 
-    return db.manyOrNone(sql,id);
+    return db.oneOrNone(sql,id);
 }
 
 Esp8266.error = (error) => {
