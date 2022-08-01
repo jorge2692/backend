@@ -155,20 +155,16 @@ module.exports = {
             const data = await Esp8266.error(id);
             const options =  notification_options
             console.log('Entro a notificate');
-            var tokens = [];
             var fcmTokens = await Esp8266.getUsersFcm(id);
             let testData = [];
+            console.log(fcmTokens)
+
             fcmTokens.forEach(element => {
                     testData.push(element.name)
                 });
+            console.log(testData)
 
-            for (var value in testData) {
-                console.log(value)
-                console.log(value['fcm_token'])
-                tokens.push(value['fcm_token']);
-            }
-              
-            console.log(tokens);
+        
 
             var payload = {
                 notification: {
@@ -177,7 +173,7 @@ module.exports = {
                 }
               };
         
-              admin.messaging().sendToDeviceGroup(tokens, payload, options)
+              admin.messaging().sendToDeviceGroup(testData, payload, options)
               .then( response => {
         
                //res.status(200).send("Notification sent successfully")
