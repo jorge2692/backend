@@ -156,8 +156,9 @@ module.exports = {
             const options =  notification_options
             console.log('Entro a notificate');
             var tokens = [];
-            const fcmTokens = await Esp8266.getUsersFcm(id);
-            for (const property in fcmTokens) {
+            var fcmTokens = await Esp8266.getUsersFcm(id);
+            console.log(fcmTokens);
+            for (var property in fcmTokens) {
                 console.log(property['fcm_token'])
                 tokens.push(property['fcm_token']);
             }
