@@ -155,10 +155,7 @@ module.exports = {
             const data = await Esp8266.error(id);
             const options =  notification_options
             var idMachine = await Esp8266.getMachineIdByEspId(id.id);
-            console.log(idMachine);
             var machine = await Esp8266.getMachineByEspId(idMachine.id_machine);
-            console.log('Entro a notificate 3');
-
             var fcmTokens = await Esp8266.getUsersFcm();
             let testData = [];
             fcmTokens.forEach(element => {
@@ -174,7 +171,9 @@ module.exports = {
               };
         
               testData.forEach(element => {
-                admin.messaging().sendToDevice(element, payload, options)
+                if(element != null){
+                    admin.messaging().sendToDevice(element, payload, options)
+                }
             });
         
             
