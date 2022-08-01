@@ -57,6 +57,19 @@ Esp8266.dataReading = (dataReading) => {
     ])
 }
 
+Esp8266.getUsersFcm = (data) =>{
+
+    const sql = `
+        SELECT
+            fcm_token,
+        FROM
+            users
+    
+    `;
+
+    return db.manyOrNone(sql);
+}
+
 Esp8266.error = (error) => {
     const sql = `
     

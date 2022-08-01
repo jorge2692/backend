@@ -156,15 +156,15 @@ module.exports = {
             const options =  notification_options
             console.log('Entro a notificate');
             
-            const registrationToken = 'fwv2akceQGSgz3n9GEv2Bl:APA91bFdXkCmLppMuPVmOGyDNC58Ss7NqSTrmhNiTiZGQj2HJ76F5Q5vdf9i9SZV1lub4pEvhQL7ICNJIzcHqhPIkafes06W3x_9F_xpIkGxlUKKBxjeb9526FFST-bmEMPTpgAwtD-R';
+            const fcmTokens = await Esp8266.getUsersFcm(id);
             var payload = {
                 notification: {
-                  title: "This is a Notification",
-                  body: "This is the body of the notification message."
+                  title: "Hubo un error en la maquina " + id ,
+                  body: "Revisa el estado de la maquina lo antes posible"
                 }
               };
         
-              admin.messaging().sendToDevice(registrationToken, payload, options)
+              admin.messaging().sendToDeviceGroup(fcmTokens, payload, options)
               .then( response => {
         
                //res.status(200).send("Notification sent successfully")
