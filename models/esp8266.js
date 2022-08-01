@@ -78,7 +78,7 @@ Esp8266.getMachineByID = (id) =>{
         FROM
             machines
         WHERE
-            id= $1
+            id = $1
     
     `;
 
