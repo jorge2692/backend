@@ -199,6 +199,22 @@ module.exports = {
         }
     },
 
+    async getAllErrors(req, res, next){
+        try{
+            const esp = await Esp8266.getAllErrors();
+            return res.status(200).json(esp);
+        }
+        catch(error){
+            console.log(`Error: ${error}`);
+            return res.status.json({
+                success: false,
+                message: 'Error al obtener el usuario por ID',
+                error: error
+            });
+
+        }
+    },
+
 
 
 

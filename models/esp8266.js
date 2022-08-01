@@ -203,6 +203,19 @@ Esp8266.findByIdData = (id) => {
     return db.manyOrNone(sql, id);
 }
 
+Esp8266.getAllErrors = () => {
+
+    const sql = `
+        SELECT
+            *
+        FROM
+            errors
+
+    `;
+
+    return db.manyOrNone(sql);
+}
+
 
 
 

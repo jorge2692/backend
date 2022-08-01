@@ -22,6 +22,10 @@ module.exports = (app) => {
 
     app.post('/api/esp8266/update/error', Esp8266Controller.error);
 
+    app.get('/api/errors', Esp8266Controller.findByIdData);
+
+
+
 
     //app.get('/api/notification', Esp8266Controller.notificate);
 
