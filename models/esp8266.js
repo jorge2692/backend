@@ -209,7 +209,7 @@ Esp8266.getAllErrors = () => {
         SELECT
             *
         FROM
-            errors
+        error
 
     `;
 
