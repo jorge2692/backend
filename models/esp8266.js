@@ -207,7 +207,7 @@ Esp8266.getAllErrors = () => {
 
     const sql = `
         select error.id, error.voltage, error.ampers, error.potency, error.id_esp , esp8266.id_machine,
-        machines.name
+        machines.name, error.alert, error.created_at
 
         from 
         error
