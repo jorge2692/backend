@@ -206,10 +206,15 @@ Esp8266.findByIdData = (id) => {
 Esp8266.getAllErrors = () => {
 
     const sql = `
-        SELECT
-            *
-        FROM
+        select error.id, error.voltage, error.ampers, error.potency, error.id_esp , esp8266.id_machine,
+        machines.name
+
+        from 
         error
+        inner join 
+        esp8266 ON error.id_esp = esp8266.id
+        inner join
+        machines on esp8266.id_machine = machines.id
 
     `;
 
