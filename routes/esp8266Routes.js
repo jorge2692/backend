@@ -22,7 +22,7 @@ module.exports = (app) => {
 
     app.post('/api/esp8266/update/error', Esp8266Controller.error);
 
-    app.get('/api/errors', Esp8266Controller.getAllErrors);
+    app.get('/api/esp8266/errors', Esp8266Controller.getAllErrors);
 
 
 
