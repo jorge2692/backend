@@ -215,6 +215,7 @@ Esp8266.getAllErrors = () => {
         esp8266 ON error.id_esp = esp8266.id
         inner join
         machines on esp8266.id_machine = machines.id
+        order by error.created_at DESC
 
     `;
 
