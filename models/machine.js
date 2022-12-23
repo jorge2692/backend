@@ -5,6 +5,7 @@ const Machine = {};
 Machine.findByCategory = (id_category) => {
     const sql =`
         
+    
         SELECT
         M.id,
         M.name,
