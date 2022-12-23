@@ -209,6 +209,7 @@ Esp8266.getAllErrors = () => {
         select error.id, error.voltage, error.ampers, error.potency, error.id_esp , esp8266.id_machine,
         machines.name, error.alert, error.created_at
 
+        
         from 
         error
         inner join 
